@@ -1286,6 +1286,14 @@ input:checked {
   margin-left: 2.5rem;
 }
 
+#lang-flag {
+  width: 10.5em;
+  height: 10.5em;
+  cursor: pointer;
+  transition: filter 0.3s;
+  display: block;
+  margin: 0 auto;
+}
 #lang-flag:focus {
   outline: 2px solid #0078d4;
   outline-offset: 2px;

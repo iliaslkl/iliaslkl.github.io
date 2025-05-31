@@ -63,17 +63,13 @@ const translations = {
 function setLanguage(lang) {
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
-  // Update button label and flag image
   const langFlag = document.getElementById('lang-flag');
-  const langLabel = document.getElementById('lang-label');
   if (lang === 'en') {
-    langFlag.src = 'images/french-button.png';
+    langFlag.src = 'assets/images/french-button.png';
     langFlag.alt = 'Français';
-    langLabel.textContent = 'Français';
   } else {
-    langFlag.src = 'images/english-button.png';
+    langFlag.src = 'assets/images/english-button.png';
     langFlag.alt = 'English';
-    langLabel.textContent = 'English';
   }
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -81,22 +77,26 @@ function setLanguage(lang) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Theme initialization
-  const theme = localStorage.getItem("theme") || "dark";
-  document.body.classList.add(theme);
+function toggleLanguage() {
+  const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+  const current = localStorage.getItem('lang') || browserLang;
+  setLanguage(current === 'en' ? 'fr' : 'en');
+}
 
+document.addEventListener('DOMContentLoaded', () => {
   // Language initialization
   const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
   const savedLang = localStorage.getItem('lang') || browserLang;
   setLanguage(savedLang);
 
-  // Language switcher event
-  const langSwitch = document.getElementById('lang-switch');
-  if (langSwitch) {
-    langSwitch.addEventListener('click', () => {
-      const current = localStorage.getItem('lang') || browserLang;
-      setLanguage(current === 'en' ? 'fr' : 'en');
+  // Make the flag clickable and keyboard accessible
+  const langFlag = document.getElementById('lang-flag');
+  if (langFlag) {
+    langFlag.addEventListener('click', toggleLanguage);
+    langFlag.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        toggleLanguage();
+      }
     });
   }
 });
