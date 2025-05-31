@@ -58,17 +58,17 @@
       <!-- Mobile menu button -->
       <div class="menu-btn-container">
         <div class="container">
-          <button type="button"  class="menu-btn">menu</button>
+          <button type="button" class="menu-btn" data-i18n="menu">menu</button>
         </div>
       </div>
 
-      <!-- Navigation links (update as needed) -->
+      <!-- Navigation links -->
       <nav class="nav hidden">
         <ol class="nav-items">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#work">Projects</a></li>
-          <li class="nav-item"><a href="#skills">Skills</a></li>
-          <li class="nav-item"><a href="#contact" data-focused="last-focused">Contact</a></li>
+          <li class="nav-item"><a href="#" data-i18n="home">Home</a></li>
+          <li class="nav-item"><a href="#work" data-i18n="projects">Projects</a></li>
+          <li class="nav-item"><a href="#skills" data-i18n="skills">Skills</a></li>
+          <li class="nav-item"><a href="#contact" data-i18n="contact" data-focused="last-focused">Contact</a></li>
         </ol>
       </nav>
 
@@ -79,17 +79,17 @@
             <div class="header-info">
               <!-- Update your name and current status -->
               <h1 class="h1">
-                <span>Hi, I'm Ilias Laoukili</span>
-                <span>Student at ESIEE Paris</span>
+                <span data-i18n="greeting">Hi, I'm Ilias Laoukili</span>
+                <span data-i18n="student">Student at ESIEE Paris</span>
               </h1>
               <!-- Short introduction about yourself -->
-              <p class="header-text">
+              <p class="header-text" data-i18n="intro">
                 I am a student passionate about cybersecurity, artificial intelligence, and software development. I am proficient in Java, C++, C, Bash, Python, and the Office suite.
               </p>
               <!-- Call-to-action buttons -->
               <div class="header-btns">
-                <a href="#contact" class="btn btn-cta">Contact me</a>
-                <a href="#work" class="btn btn-secondary">See my projects</a>
+                <a href="#contact" class="btn btn-cta" data-i18n="contactMe">Contact me</a>
+                <a href="#work" class="btn btn-secondary" data-i18n="seeProjects" data-focused="last-focused">See my projects</a>
               </div>
             </div>
             <img src="assets/images/face.png" alt="Ilias Laoukili" class="profile-face" />
@@ -98,74 +98,43 @@
       </div>
     </header>
 
-    <!-- =========================
-         MAIN CONTENT
-         =========================
-         Each section below is clearly marked.
-    -->
     <main>
-      <!-- ===== PROJECTS SECTION ===== -->
-      <!-- Add or update your main projects here -->
+      <!-- Projects Section -->
       <section class="work">
         <div class="container">
-          <h2 class="h2" id="work">Projects</h2>
+          <h2 class="h2" id="work" data-i18n="projects">Projects</h2>
           <div class="work-boxes">
-            <!-- Example project box. Duplicate or edit as needed. -->
             <div class="work-box">
               <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">Java Video Game</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
+                <h3 class="h3" data-i18n="javaGameTitle">Java Video Game</h3>
+                <p class="work-text" data-i18n="javaGameDesc">
                   A text-based adventure game developed in Java as part of an academic project. 
                   This project helped me strengthen my programming fundamentals, object-oriented design, 
                   and problem-solving skills while creating an engaging interactive experience.
                 </p>
-                <!-- Add technologies you used to build the project -->
                 <ol class="work-technologies">
                   <li>Java</li>
-                  <li>Object-Oriented Programming</li>
+                  <li data-i18n="oop">Object-Oriented Programming</li>
                 </ol>
-
                 <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://github.com/iliaslkl" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                  <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="https://github.com/iliaslkl"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/github.svg"
-                      alt="GitHub"
-                      loading="lazy"
-                    />
+                  <a href="https://github.com/iliaslkl" target="_blank" rel="noopener" class="link" data-i18n="explore">Explore this project</a>
+                  <a href="https://github.com/iliaslkl" target="_blank" rel="noopener" title="Source code">
+                    <img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" />
                   </a>
                 </div>
               </div>
-
               <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/portfolio-template.webp"
-                  alt="Java Video Game"
-                />
+                <img loading="lazy" src="assets/images/work/portfolio-template.webp" alt="Java Video Game" />
               </picture>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===== SKILLS SECTION ===== -->
-      <!-- Only the tools you master are listed here -->
+      <!-- Skills Section -->
       <section class="skills">
         <div class="container">
-          <h2 class="h2" id="skills">My Toolkit</h2>
+          <h2 class="h2" id="skills" data-i18n="skills">My Toolkit</h2>
           <div class="skills-imgs">
             <img src="assets/images/skills/java.svg" alt="Java" class="skills-img" loading="lazy" title="Java">
             <img src="assets/images/skills/cpp.png" alt="C++" class="skills-img" loading="lazy" title="C++">
@@ -177,19 +146,15 @@
         </div>
       </section>
 
-      <!-- ===== CONTACT SECTION ===== -->
-      <!-- Update your contact info and message here -->
+      <!-- Contact Section -->
       <section class="contact">
         <div class="container">
-          <h2 class="h2" id="contact">Contact</h2>
+          <h2 class="h2" id="contact" data-i18n="contact">Contact</h2>
           <div class="contact-content">
             <div class="contact-textbox">
               <!-- Availability status -->
-              <strong href="#" class="hire-alert">
-                <span class="indicator"></span>
-                Available for internship
-              </strong>
-              <p class="contact-text">
+              <strong class="hire-alert"><span class="indicator"></span><span data-i18n="available">Available for internship</span></strong>
+              <p class="contact-text" data-i18n="contactText">
                 Interested in collaborating, discussing a project, or just want to connect? Send me a message and I'll get back to you as soon as possible!
               </p>
               <!-- Signature image (update if needed) -->
@@ -203,11 +168,11 @@
             <!-- Contact form -->
             <form action="#" class="contact-form" netlify>
               <div class="form-field">
-                <label for="name">Name</label>
+                <label for="name" data-i18n="nameLabel">Name</label>
                 <input type="text" name="name" id="name" required />
               </div>
               <div class="form-field">
-                <label for="email">Email</label>
+                <label for="email" data-i18n="emailLabel">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -217,10 +182,10 @@
                 />
               </div>
               <div class="form-field">
-                <label for="message">How can I help you?</label>
+                <label for="message" data-i18n="messageLabel">How can I help you?</label>
                 <textarea name="message" id="message" required></textarea>
               </div>
-              <button type="submit" class="btn btn-cta">Send</button>
+              <button type="submit" class="btn btn-cta" data-i18n="send">Send</button>
             </form>
           </div>
         </div>
@@ -239,37 +204,133 @@
           <nav>
             <ol class="footer-links">
               <li class="footer-link">
-                <a title="GitHub" href="https://github.com/devsyedmohsin" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/github.svg"
-                    alt="GitHub"
-                /></a>
+                <a title="GitHub" href="https://github.com/devsyedmohsin" target="_blank" rel="noopener">
+                  <img loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" />
+                </a>
               </li>
               <li class="footer-link">
-                <a title="Linkedin" href="https://www.linkedin.com/in/ilias-laoukili-528a1327b" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/linkedin.svg"
-                    alt="Linkedin"
-                /></a>
+                <a title="Linkedin" href="https://www.linkedin.com/in/ilias-laoukili-528a1327b" target="_blank" rel="noopener">
+                  <img loading="lazy" src="assets/images/social-links/linkedin.svg" alt="Linkedin" />
+                </a>
               </li>
             </ol>
           </nav>
           <p class="footer-text">
-            &copy; <span>2024</span> - Portfolio of Ilias Laoukili.<br>
-            Template by
+            &copy; <span>2024</span> - <span data-i18n="footerText">Portfolio of Ilias Laoukili.</span><br>
+            <span data-i18n="templateBy">Template by</span>
             <a href="https://github.com/devsyedmohsin?tab=repositories" target="_blank" rel="noopener">
               Syed Mohsin Raza
             </a>
           </p>
           <!-- Theme switcher -->
           <label class="theme-switch" for="theme-switch">
-            <span>Dark Theme</span>
+            <span data-i18n="darkTheme">Dark Theme</span>
             <input type="checkbox" id="theme-switch" role="switch"/>
           </label>
+
+          <!-- Language switcher button -->
+          <div class="lang-switcher" style="margin-top:1rem;">
+            <img
+              id="lang-flag"
+              src="images/french-button.png"
+              alt="Français"
+              style="width:2em; height:2em; cursor:pointer; transition:filter 0.3s;"
+              onclick="toggleLanguage()"
+              tabindex="0"
+              role="button"
+              aria-label="Switch language"
+              onkeydown="if(event.key==='Enter'||event.key===' '){toggleLanguage();}"
+            />
+          </div>
         </div>
       </div>
     </footer>
+    <script>
+      // Minimal translation dictionary (expand as needed)
+      const translations = {
+        en: {
+          menu: "menu",
+          home: "Home",
+          projects: "Projects",
+          skills: "My Toolkit",
+          contact: "Contact",
+          greeting: "Hi, I'm Ilias Laoukili",
+          student: "Student at ESIEE Paris",
+          intro: "I am a student passionate about cybersecurity, artificial intelligence, and software development. I am proficient in Java, C++, C, Bash, Python, and the Office suite.",
+          contactMe: "Contact me",
+          seeProjects: "See my projects",
+          javaGameTitle: "Java Video Game",
+          javaGameDesc: "A text-based adventure game developed in Java as part of an academic project. This project helped me strengthen my programming fundamentals, object-oriented design, and problem-solving skills while creating an engaging interactive experience.",
+          oop: "Object-Oriented Programming",
+          available: "Available for internship",
+          contactText: "Interested in collaborating, discussing a project, or just want to connect? Send me a message and I'll get back to you as soon as possible!",
+          nameLabel: "Name",
+          emailLabel: "Email",
+          messageLabel: "How can I help you?",
+          send: "Send",
+          explore: "Explore this project",
+          darkTheme: "Dark Theme",
+          footerText: "Portfolio of Ilias Laoukili.",
+          templateBy: "Template by",
+        },
+        fr: {
+          menu: "menu",
+          home: "Accueil",
+          projects: "Projets",
+          skills: "Mes Outils",
+          contact: "Contact",
+          greeting: "Bonjour, je suis Ilias Laoukili",
+          student: "Étudiant à l'ESIEE Paris",
+          intro: "Je suis un étudiant passionné par la cybersécurité, l'intelligence artificielle et le développement logiciel. Je maîtrise Java, C++, C, Bash, Python et la suite Office.",
+          contactMe: "Contactez-moi",
+          seeProjects: "Voir mes projets",
+          javaGameTitle: "Jeu vidéo Java",
+          javaGameDesc: "Un jeu d'aventure textuel développé en Java dans le cadre d'un projet académique. Ce projet m'a permis de renforcer mes bases en programmation, la conception orientée objet et la résolution de problèmes tout en créant une expérience interactive.",
+          oop: "Programmation Orientée Objet",
+          available: "Disponible pour un stage",
+          contactText: "Intéressé par une collaboration, discuter d'un projet ou simplement envie de me contacter ? Envoyez-moi un message et je vous répondrai dès que possible !",
+          nameLabel: "Nom",
+          emailLabel: "E-mail",
+          messageLabel: "Comment puis-je vous aider ?",
+          send: "Envoyer",
+          explore: "Voir ce projet",
+          darkTheme: "Thème Sombre",
+          footerText: "Portfolio de Ilias Laoukili.",
+          templateBy: "Template par",
+        }
+      };
+
+      function setLanguage(lang) {
+        localStorage.setItem('lang', lang);
+        document.documentElement.lang = lang;
+        const langFlag = document.getElementById('lang-flag');
+        if (lang === 'en') {
+          langFlag.src = 'images/french-button.png';
+          langFlag.alt = 'Français';
+        } else {
+          langFlag.src = 'images/english-button.png';
+          langFlag.alt = 'English';
+        }
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) el.textContent = translations[lang][key];
+        });
+      }
+
+      function toggleLanguage() {
+        const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+        const current = localStorage.getItem('lang') || browserLang;
+        setLanguage(current === 'en' ? 'fr' : 'en');
+      }
+
+      // Theme initialization (if not already present)
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+
+      // Language initialization
+      const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+      const savedLang = localStorage.getItem('lang') || browserLang;
+      window.addEventListener('DOMContentLoaded', () => setLanguage(savedLang));
+    </script>
   </body>
 </html>
