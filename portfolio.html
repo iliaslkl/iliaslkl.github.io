@@ -2,41 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio – Projects</title>
+  <title>Projects – Ilias Laoukili</title>
+
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
   <header>
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    <h1>Ilias Laoukili</h1>
-    <p>Projects & Case Studies</p>
+    <h1>Projects</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="index.html#contact">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Projects</a></li>
+      </ul>
     </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
   </header>
 
   <main>
-    <section id="portfolio" data-aos="fade-up">
-      <h2>Portfolio</h2>
+    <section id="projects" data-aos="fade-up">
+      <h2>My Work</h2>
+
+      <!-- Filters -->
+      <div id="filters" class="filter-list">
+        <button class="filter-btn active" data-tag="all">All</button>
+        <button class="filter-btn" data-tag="ai">AI</button>
+        <button class="filter-btn" data-tag="iot">IoT</button>
+        <button class="filter-btn" data-tag="drone">Drone</button>
+      </div>
+
+      <!-- Project cards -->
       <div class="portfolio-grid">
-        <div class="project-card" data-aos="zoom-in">
-          <img src="https://via.placeholder.com/600x400" alt="Project screenshot" />
+        <div class="card" data-tags="ai,ocr">
+          <img src="https://via.placeholder.com/600x400" alt="OCR project" />
           <div class="info">
-            <h3>Project Title</h3>
-            <p>Short description of the project — what, why, how.</p>
-            <a href="#" target="_blank">View Project</a>
+            <h3>Arabic OCR Pipeline</h3>
+            <p>Deep-learning handwriting recognition achieving 92 % accuracy.</p>
+            <a href="#" target="_blank">View Repo</a>
+          </div>
+        </div>
+
+        <div class="card" data-tags="drone,ai">
+          <img src="https://via.placeholder.com/600x400" alt="VTOL drone" />
+          <div class="info">
+            <h3>Autonomous VTOL Drone</h3>
+            <p>Open-source tailsitter VTOL with onboard person-detection & auto-pilot.</p>
+            <a href="#" target="_blank">View Repo</a>
+          </div>
+        </div>
+
+        <div class="card" data-tags="iot">
+          <img src="https://via.placeholder.com/600x400" alt="LoRa Mesh" />
+          <div class="info">
+            <h3>LoRa Mesh Node</h3>
+            <p>ESP32 + LoRa node enabling 20 km mesh communication.</p>
+            <a href="#" target="_blank">View Repo</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><p>&copy; <span id="year"></span> Ilias Laoukili. All rights reserved.</p></footer>
+  <footer>
+    © <span id="year"></span> Ilias Laoukili · All rights reserved.
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/script.js"></script>
