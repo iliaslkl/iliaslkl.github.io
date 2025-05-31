@@ -1285,3 +1285,14 @@ input:checked {
   background: var(--bg-color-secondary);
   margin-left: 2.5rem;
 }
+
+#lang-flag:focus {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+body.dark #lang-flag {
+  filter: invert(1) hue-rotate(180deg);
+}
+body.light #lang-flag {
+  filter: none;
+}
