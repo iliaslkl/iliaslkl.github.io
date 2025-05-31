@@ -73,7 +73,7 @@ function setLanguage(lang) {
   }
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) el.textContent = translations[lang][key];
+    if (translations[lang][key]) el.innerHTML = translations[lang][key];
   });
 }
 
@@ -99,6 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Set year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
 // Toggle navigation menu
