@@ -6,6 +6,102 @@ const workImgs = document.querySelectorAll(".work-img");
 const mainEl = document.querySelector("main");
 const yearEl = document.querySelector(".footer-text span");
 
+// Minimal translation dictionary (expand as needed)
+const translations = {
+  en: {
+    menu: "menu",
+    home: "Home",
+    projects: "Projects",
+    skills: "My Toolkit",
+    contact: "Contact",
+    greeting: "Hi, I'm Ilias Laoukili",
+    student: "Student at ESIEE Paris",
+    intro: "I am a student passionate about cybersecurity, artificial intelligence, and software development. I am proficient in Java, C++, C, Bash, Python, and the Office suite.",
+    contactMe: "Contact me",
+    seeProjects: "See my projects",
+    javaGameTitle: "Java Video Game",
+    javaGameDesc: "A text-based adventure game developed in Java as part of an academic project. This project helped me strengthen my programming fundamentals, object-oriented design, and problem-solving skills while creating an engaging interactive experience.",
+    oop: "Object-Oriented Programming",
+    available: "Available for internship",
+    contactText: "Interested in collaborating, discussing a project, or just want to connect? Send me a message and I'll get back to you as soon as possible!",
+    nameLabel: "Name",
+    emailLabel: "Email",
+    messageLabel: "How can I help you?",
+    send: "Send",
+    explore: "Explore this project",
+    darkTheme: "Dark Theme",
+    footerText: "Portfolio of Ilias Laoukili.",
+    templateBy: "Template by",
+  },
+  fr: {
+    menu: "menu",
+    home: "Accueil",
+    projects: "Projets",
+    skills: "Mes Outils",
+    contact: "Contact",
+    greeting: "Bonjour, je suis Ilias Laoukili",
+    student: "Étudiant à l'ESIEE Paris",
+    intro: "Je suis un étudiant passionné par la cybersécurité, l'intelligence artificielle et le développement logiciel. Je maîtrise Java, C++, C, Bash, Python et la suite Office.",
+    contactMe: "Contactez-moi",
+    seeProjects: "Voir mes projets",
+    javaGameTitle: "Jeu vidéo Java",
+    javaGameDesc: "Un jeu d'aventure textuel développé en Java dans le cadre d'un projet académique. Ce projet m'a permis de renforcer mes bases en programmation, la conception orientée objet et la résolution de problèmes tout en créant une expérience interactive.",
+    oop: "Programmation Orientée Objet",
+    available: "Disponible pour un stage",
+    contactText: "Intéressé par une collaboration, discuter d'un projet ou simplement envie de me contacter ? Envoyez-moi un message et je vous répondrai dès que possible !",
+    nameLabel: "Nom",
+    emailLabel: "E-mail",
+    messageLabel: "Comment puis-je vous aider ?",
+    send: "Envoyer",
+    explore: "Voir ce projet",
+    darkTheme: "Thème Sombre",
+    footerText: "Portfolio de Ilias Laoukili.",
+    templateBy: "Template par",
+  }
+};
+
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  // Update button label and flag image
+  const langFlag = document.getElementById('lang-flag');
+  const langLabel = document.getElementById('lang-label');
+  if (lang === 'en') {
+    langFlag.src = 'images/french-button.png';
+    langFlag.alt = 'Français';
+    langLabel.textContent = 'Français';
+  } else {
+    langFlag.src = 'images/english-button.png';
+    langFlag.alt = 'English';
+    langLabel.textContent = 'English';
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) el.textContent = translations[lang][key];
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Theme initialization
+  const theme = localStorage.getItem("theme") || "dark";
+  document.body.classList.add(theme);
+
+  // Language initialization
+  const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+  const savedLang = localStorage.getItem('lang') || browserLang;
+  setLanguage(savedLang);
+
+  // Language switcher event
+  const langSwitch = document.getElementById('lang-switch');
+  if (langSwitch) {
+    langSwitch.addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || browserLang;
+      setLanguage(current === 'en' ? 'fr' : 'en');
+    });
+  }
+});
+
+// Toggle navigation menu
 const toggleNav = () => {
   nav.classList.toggle("hidden");
 
