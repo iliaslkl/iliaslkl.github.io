@@ -68,7 +68,8 @@ function setLanguage(lang) {
     langFlag.src = 'assets/images/french-button.png';
     langFlag.alt = 'Français';
   } else {
-    langFlag.src = 'assets/images/english-button.png';
+    // Use correct filename case for the English flag on case-sensitive systems
+    langFlag.src = 'assets/images/English-button.png';
     langFlag.alt = 'English';
   }
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -160,12 +161,20 @@ workEls.forEach((workEl) => {
 
 // Toggle theme and store user preferred theme for future
 
-const switchThemeEl = document.querySelector('input[type="checkbox"]');
-const storedTheme = localStorage.getItem("theme");
+function initializeTheme() {
+  const switchThemeEl = document.querySelector('input[type="checkbox"]');
+  const storedTheme = localStorage.getItem("theme");
+  const darkMode = storedTheme === "dark" || storedTheme === null;
+  if (switchThemeEl) switchThemeEl.checked = darkMode;
+  document.body.classList.toggle("dark", darkMode);
+  document.body.classList.toggle("light", !darkMode);
+}
 
-switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
 
-switchThemeEl.addEventListener("click", () => {
+initializeTheme();
+
+document.querySelector('input[type="checkbox"]').addEventListener("click", () => {
+  const switchThemeEl = document.querySelector('input[type="checkbox"]');
   const isChecked = switchThemeEl.checked;
 
   if (!isChecked) {
@@ -212,3 +221,10 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 });
 
 yearEl.textContent = new Date().getFullYear();
+
+// Export for testing environment
+if (typeof module !== 'undefined') {
+  module.exports = {
+    initializeTheme,
+  };
+}
