@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "node test/theme.test.js"
+    "test": "node test/theme.test.js && node test/language.test.js"
   },
   "keywords": [],
   "author": "",
