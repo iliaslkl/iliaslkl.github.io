@@ -29,7 +29,10 @@
 
     <!-- ======= FONTS & STYLES ======= -->
     <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="style.css"  />
+    <link rel="preload" href="assets/images/hero-bg-dark.gif" as="image">
+    <link rel="preload" href="assets/images/hero-bg-light.gif" as="image">
+    <link rel="preload" href="assets/images/face.png" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
     <title>Ilias Laoukili – ESIEE Paris Student</title>
@@ -69,7 +72,7 @@
                 <a href="#work" class="btn btn-secondary" data-i18n="seeProjects" data-focused="last-focused">See my projects</a>
               </div>
             </div>
-            <img src="assets/images/face.png" alt="Ilias Laoukili" class="profile-face" />
+            <img src="assets/images/face.png" alt="Ilias Laoukili" class="profile-face" width="360" height="360" fetchpriority="high" />
           </div>
         </div>
       </div>
@@ -96,12 +99,12 @@
                 <div class="work-links">
                   <a href="https://github.com/iliaslkl" target="_blank" rel="noopener" class="link" data-i18n="explore">Explore this project</a>
                   <a href="https://github.com/iliaslkl/EchoesOfInnocence" target="_blank" rel="noopener" title="Source code">
-                    <img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" />
+                    <img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" width="28" height="28" />
                   </a>
                 </div>
               </div>
               <picture class="work-img">
-                <img loading="lazy" src="assets/images/work/java-game.png" alt="Java Video Game" />
+                <img loading="lazy" src="assets/images/work/java-game.png" alt="Java Video Game" width="1920" height="1080" />
               </picture>
             </div>
           </div>
@@ -113,12 +116,12 @@
         <div class="container">
           <h2 class="h2" id="skills" data-i18n="skills">My Toolkit</h2>
           <div class="skills-imgs">
-            <img src="assets/images/skills/java.svg" alt="Java" class="skills-img" loading="lazy" title="Java">
-            <img src="assets/images/skills/cpp.png" alt="C++" class="skills-img" loading="lazy" title="C++">
-            <img src="assets/images/skills/c.png" alt="C" class="skills-img" loading="lazy" title="C">
-            <img src="assets/images/skills/shell.webp" alt="Bash" class="skills-img" loading="lazy" title="Bash">
-            <img src="assets/images/skills/python.png" alt="Python" class="skills-img" loading="lazy" title="Python">
-            <img src="assets/images/skills/office.png" alt="Suite Office" class="skills-img" loading="lazy" title="Suite Office">
+            <img src="assets/images/skills/java.svg" alt="Java" class="skills-img" loading="lazy" title="Java" width="135" height="135">
+            <img src="assets/images/skills/cpp.png" alt="C++" class="skills-img" loading="lazy" title="C++" width="135" height="135">
+            <img src="assets/images/skills/c.png" alt="C" class="skills-img" loading="lazy" title="C" width="135" height="135">
+            <img src="assets/images/skills/shell.webp" alt="Bash" class="skills-img" loading="lazy" title="Bash" width="135" height="135">
+            <img src="assets/images/skills/python.png" alt="Python" class="skills-img" loading="lazy" title="Python" width="135" height="135">
+            <img src="assets/images/skills/office.png" alt="Suite Office" class="skills-img" loading="lazy" title="Suite Office" width="135" height="135">
           </div>
         </div>
       </section>
@@ -133,7 +136,7 @@
               <p class="contact-text" data-i18n="contactText">
                 Interested in collaborating, discussing a project, or just want to connect? Send me a message and I'll get back to you as soon as possible!
               </p>
-              <img src="assets/images/signature.png" alt="Ilias Laoukili" class="signatures" loading="lazy" />
+              <img src="assets/images/signature.png" alt="Ilias Laoukili" class="signatures" loading="lazy" width="150" height="150" />
             </div>
             <form action="#" class="contact-form" netlify>
               <div class="form-field">
@@ -165,12 +168,12 @@
             <ol class="footer-links">
               <li class="footer-link">
                 <a title="GitHub" href="https://github.com/devsyedmohsin" target="_blank" rel="noopener">
-                  <img loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" />
+                  <img loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" width="32" height="32" />
                 </a>
               </li>
               <li class="footer-link">
                 <a title="LinkedIn" href="https://www.linkedin.com/in/ilias-laoukili-528a1327b" target="_blank" rel="noopener">
-                  <img loading="lazy" src="assets/images/social-links/linkedin.svg" alt="LinkedIn" />
+                  <img loading="lazy" src="assets/images/social-links/linkedin.svg" alt="LinkedIn" width="32" height="32" />
                 </a>
               </li>
             </ol>
@@ -196,6 +199,7 @@
               tabindex="0"
               role="button"
               aria-label="Switch language"
+              width="112" height="75"
             />
           </div>
         </div>
