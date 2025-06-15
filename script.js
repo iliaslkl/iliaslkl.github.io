@@ -226,5 +226,7 @@ yearEl.textContent = new Date().getFullYear();
 if (typeof module !== 'undefined') {
   module.exports = {
     initializeTheme,
+    setLanguage,
+    toggleLanguage,
   };
 }
